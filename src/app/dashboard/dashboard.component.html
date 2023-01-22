@@ -1,0 +1,49 @@
+<div class = "center">
+    <button mat-button (click)="exit()">Salir</button>
+</div>
+<table mat-table [dataSource]="matDataSource" matSort class="mat-elevation-z8">
+
+    <ng-container matColumnDef="Cliente" class="make-gold">
+        <th mat-header-cell *matHeaderCellDef> Cliente </th>
+        <td mat-cell *matCellDef="let element"> {{element.nombre}} {{element.apellido}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="FechaReserva" class="make-gold">
+        <th mat-header-cell *matHeaderCellDef> Fecha Reserva </th>
+        <td mat-cell *matCellDef="let element"> {{element.fechaReserva}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="CantidadPersonas" class="make-gold">
+        <th mat-header-cell *matHeaderCellDef> Cantidad de Personas </th>
+        <td mat-cell *matCellDef="let element"> {{element.cantidadPersonas}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="TipoReserva" class="make-gold">
+        <th mat-header-cell *matHeaderCellDef> Tipo de Reserva </th>
+        <td mat-cell *matCellDef="let element"> {{element.tipoReserva}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Observaciones" class="make-gold">
+        <th mat-header-cell *matHeaderCellDef> Observaciones </th>
+        <td mat-cell *matCellDef="let element"> {{element.observaciones}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Estado" class="make-gold">
+        <th mat-header-cell *matHeaderCellDef> Estado </th>
+        <td mat-cell *matCellDef="let element"> {{element.estado}} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="CambioEstado">
+        <th mat-header-cell *matHeaderCellDef> Cambiar Estado </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-raised-button color="primary" focusable="false" (click)="changeState(element)">
+            <mat-icon>visibility</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row [ngClass]="{'make-gold': row.nroReserva == 1000}" *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-paginator [pageSize]="50" [pageSizeOptions]="[50, 100, 200]" showFirstLastButtons>
+</mat-paginator>

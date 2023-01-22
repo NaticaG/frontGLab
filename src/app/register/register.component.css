@@ -1,0 +1,55 @@
+.login-page {
+    top: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+  }
+  
+  mat-card {
+    width: 40%;
+    margin: 1% auto;
+    border-radius: 8px;
+  }
+  mat-form-field, mat-checkbox {
+    width: 45%;
+    display: inline-block;
+    margin: auto;
+  }
+  mat-card-content {
+    margin-top: 20px;
+  }
+  
+  .logo{
+    height: 5rem !important;
+    width: 5rem !important;
+  }
+  
+  .login-button {
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+    margin: 20px auto;
+  }
+
+  .add-button {
+     
+    display: inline-block;
+    width: 50%;
+  }
+  
+  ::ng-deep .mat-tab-list .mat-tab-labels .mat-tab-label-active {
+    font-size:25px !important;  
+  }
+
+  .login-button2 {
+    margin-top: 20px;
+    display: block;
+    width: 30%;
+    margin: 20px auto;
+  }

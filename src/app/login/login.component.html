@@ -1,0 +1,32 @@
+<form>
+  <div class="login-page">
+    <mat-card class="mat-elevation-z12">
+      <mat-card-title style="text-align: center;">
+        Administrar Reserva
+      </mat-card-title>
+      <mat-card-content>
+        <form #formulario="ngForm">
+          <mat-form-field>
+            <input matInput type="email" [(ngModel)]="adminDTO.correo" name="email" placeholder="Email" required="required" 
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"/>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput type="password" [(ngModel)]="adminDTO.password" name="password" placeholder="Password" required="required" />
+          </mat-form-field>
+
+          <button mat-raised-button color="primary" class="login-button2" (click)="login()" [disabled]="formulario.invalid">
+            Login
+          </button>
+
+          <button mat-raised-button color="primary" class="login-button2" (click)="exit()">
+            Atras
+          </button>
+
+        </form>
+      </mat-card-content>
+    </mat-card>
+
+
+  </div>
+</form>
